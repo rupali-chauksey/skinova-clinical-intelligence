@@ -24,7 +24,7 @@ The system uses **speech-to-text, a Vision-Language Model (VLM), deterministic P
 
 
 
-## 🎥 Demo
+## 🎥 Demo Video
 
 
 https://github.com/user-attachments/assets/fb687f78-9445-46a1-954d-ef49ef45d373
