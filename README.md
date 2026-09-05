@@ -1,9 +1,3 @@
-
-https://github.com/user-attachments/assets/bed9fbbd-3a82-4e40-968b-60785bbdac63
-
-
-https://github.com/user-attachments/assets/58b6dd26-b154-47fd-892a-6f1b17dd09a9
-
 # Skinova Clinical Intelligence
 
 ## Multimodal AI for Skin Analysis & Consultation
@@ -33,23 +27,8 @@ The system uses **speech-to-text, a Vision-Language Model (VLM), deterministic P
 
 ## 🎥 Demo
 
-![](https://github.com/user-attachments/assets/99f64f2a-ff7d-4b65-a337-21ac88277070)
-
-
-
-https://github.com/user-attachments/assets/2e4fce05-a989-4b6a-aef3-ebe9c2e71af1
-
-
-
-
-
-
 
 Uploading skinova-demo.mp4…
-
-
-
-
 
 ---
 
