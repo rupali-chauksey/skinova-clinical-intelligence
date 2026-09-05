@@ -37,10 +37,15 @@ The system uses **speech-to-text, a Vision-Language Model (VLM), deterministic P
 ![](https://github.com/user-attachments/assets/99f64f2a-ff7d-4b65-a337-21ac88277070)
 
 
+imp video 
+
+https://github.com/user-attachments/assets/fb687f78-9445-46a1-954d-ef49ef45d373
 
 
 
-Uploading skinova-demo.mp4…
+
+
+
 
 
 
