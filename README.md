@@ -23,16 +23,10 @@ The system uses **speech-to-text, a Vision-Language Model (VLM), deterministic P
 [https://skinova-clinical-intelligence.onrender.com](https://skinova-clinical-intelligence.onrender.com)
 
 
+
 ## 🎥 Demo
 
-<video
-  src="PASTE_GITHUB_VIDEO_URL_HERE"
-  controls
-  muted
-  loop
-  playsinline
-  width="100%">
-</video>
+![](https://github.com/user-attachments/assets/99f64f2a-ff7d-4b65-a337-21ac88277070)
 
 ---
 
