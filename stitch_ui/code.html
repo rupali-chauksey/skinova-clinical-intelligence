@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Skin Specialist - Consultation Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f9f9ff",
+                        "background": "#f9f9ff",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "on-background": "#181c23",
+                        "on-surface-variant": "#434654",
+                        "inverse-primary": "#b2c5ff",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-container-high": "#e5e8f3",
+                        "on-tertiary-fixed-variant": "#364a4d",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#737685",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004e5f",
+                        "surface-dim": "#d7dae5",
+                        "surface-variant": "#dfe2ed",
+                        "outline-variant": "#c3c6d6",
+                        "primary-container": "#0052cc",
+                        "surface-bright": "#f9f9ff",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#005c70",
+                        "secondary-container": "#50d9fe",
+                        "tertiary-container": "#495e61",
+                        "tertiary-fixed": "#d0e7ea",
+                        "secondary": "#00677d",
+                        "on-primary-fixed-variant": "#0040a2",
+                        "surface-container-highest": "#dfe2ed",
+                        "on-tertiary-fixed": "#091f21",
+                        "surface-container": "#ebedf9",
+                        "on-surface": "#181c23",
+                        "on-tertiary-container": "#c0d7da",
+                        "secondary-fixed-dim": "#4cd6fb",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#324749",
+                        "on-secondary-fixed": "#001f27",
+                        "primary": "#003d9b",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dae2ff",
+                        "inverse-on-surface": "#eef0fc",
+                        "secondary-fixed": "#b3ebff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#b4cbce",
+                        "inverse-surface": "#2c3039",
+                        "on-primary-container": "#c4d2ff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001848",
+                        "surface-tint": "#0c56d0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "card-padding": "20px",
+                        "stack-md": "16px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "transcript-mono": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "transcript-mono": ["15px", { "lineHeight": "26px", "fontWeight": "450" }],
+                        "headline-lg-mobile": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-bold": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 82, 204, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 82, 204, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 82, 204, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest h-screen w-64 fixed left-0 top-0 shadow-[0px_4px_20px_rgba(0,0,0,0.04)] flex flex-col h-full py-stack-lg px-margin-mobile z-50">
+<div class="mb-stack-lg px-stack-sm flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[32px]">local_hospital</span>
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">DermAI Pro</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Clinical Specialist</p>
+</div>
+</div>
+<button class="mb-stack-lg w-full bg-primary text-on-primary font-label-bold text-label-bold py-3 rounded-lg hover:bg-primary-container transition-colors shadow-sm active:scale-[0.98] duration-200">
+            New Consultation
+        </button>
+<ul class="flex-1 flex flex-col gap-unit">
+<li class="">
+<a class="flex items-center gap-3 px-stack-sm py-3 text-primary font-bold border-r-2 border-primary hover:bg-surface-container-low transition-colors rounded-l-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined filled">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-stack-sm py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">medical_services</span>
+                    Consultations
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-stack-sm py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+                    Patient Records
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-stack-sm py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">psychology</span>
+                    AI Diagnostics
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-stack-sm py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">shield_lock</span>
+                    Security Settings
+                </a>
+</li>
+</ul>
+<div class="mt-auto pt-stack-md border-t border-surface-variant">
+<ul class="flex flex-col gap-unit">
+<li class="">
+<a class="flex items-center gap-3 px-stack-sm py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">help</span>
+                        Help Center
+                    </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-stack-sm py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">logout</span>
+                        Sign Out
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="ml-64 flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface fixed top-0 right-0 w-[calc(100%-16rem)] z-40 flex items-center justify-between px-margin-desktop h-20 border-b border-surface-variant">
+<div class="flex items-center gap-8">
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary">DermAI Specialist</h2>
+<nav class="hidden md:flex gap-6">
+<a class="font-label-bold text-label-bold text-primary border-b-2 border-primary pb-1 hover:text-primary transition-colors active:opacity-80" href="#">Overview</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors active:opacity-80" href="#">History</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors active:opacity-80" href="#">Encryption Logs</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 rounded-full border-outline-variant bg-surface-container-lowest focus:ring-primary focus:border-primary text-body-sm w-64" placeholder="Search records..." type="text"/>
+</div>
+<button class="text-error font-label-bold text-label-bold px-4 py-2 border border-error rounded-lg hover:bg-error-container transition-colors">
+                    Emergency Triage
+                </button>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img alt="Specialist Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a clinical specialist, modern lighting, neutral background, high resolution, soft corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRNVBDxcka0Vql1-MMlcgP-IaFpsw-Q7HTwVkik9tcRNY-n9bs7Tl3CjqHYzRDOInniuYz8FkSqrR6HcbTWxNPhopoOIvspQQZOPq3w1knL90eG-t0UHWX_hbUAMhEHD8QUNcnss2ZnH-rppCp7LFPXURO5fszvV2B5QrwyYAWKkX2R820u7ZRpvtWlzrZg0GdmPu1JsAY16EWrsfTf_8LJ4BMozsJnyVjBD-mDYUm_9I5b74CXRTl"/>
+</button>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<main class="flex-1 mt-20 p-margin-desktop overflow-y-auto bg-background">
+<!-- Header Banner -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding shadow-[0px_4px_20px_rgba(0,0,0,0.04)] mb-stack-lg border border-surface-variant flex justify-between items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-1">AI Skin Specialist</h2>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Voice, Image, and Video Based Skin Consultation Assistant</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full border border-surface-variant text-primary">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span class="font-label-bold text-label-bold">Privacy-first consultation</span>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Panel: Patient Consultation -->
+<div class="lg:col-span-5 flex flex-col gap-stack-md">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">assignment</span>
+<h3 class="font-headline-lg text-[20px] font-bold text-on-surface">Patient Input</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] border border-surface-variant p-card-padding">
+<h4 class="font-body-md text-body-md font-medium text-on-surface mb-stack-md">Describe your skin concern</h4>
+<!-- Voice Input -->
+<div class="mb-stack-lg border-b border-surface-variant pb-stack-md"><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">mic</span><span class="font-label-bold text-label-bold">Patient Voice</span></div><button class="text-primary font-label-bold text-label-bold hover:text-primary-container flex items-center gap-1 transition-colors" id="toggle-audio-upload"><span class="material-symbols-outlined text-[16px]">upload</span> Upload Audio</button></div><div class="grid grid-cols-1 gap-stack-md"><div class="flex items-center gap-4 bg-surface-container-low p-3 rounded-lg border border-surface-variant"><button class="flex items-center justify-center w-12 h-12 rounded-full bg-error text-on-primary pulse-ring shadow-sm"><span class="material-symbols-outlined">mic</span></button><div class="flex-1"><p class="font-label-bold text-label-bold text-on-surface">Record Voice</p><p class="font-body-sm text-[12px] text-on-surface-variant">Click to start recording</p></div><div class="flex gap-1 items-center px-2"><div class="w-1 h-4 bg-primary rounded-full opacity-40"></div><div class="w-1 h-6 bg-primary rounded-full"></div><div class="w-1 h-3 bg-primary rounded-full opacity-60"></div><div class="w-1 h-5 bg-primary rounded-full"></div></div></div><div class="hidden border-2 border-dashed border-outline-variant rounded-lg p-4 flex flex-col items-center justify-center text-center hover:bg-surface-container-low transition-colors cursor-pointer bg-surface" id="audio-upload-zone"><div class="flex items-center gap-1 text-outline mb-2 w-full justify-start border-b border-surface-variant pb-1"><span class="material-symbols-outlined text-[16px]">audio_file</span><span class="font-label-bold text-[10px]">File Upload</span></div><span class="material-symbols-outlined text-[24px] text-primary mb-1">upload</span><p class="font-body-sm text-on-surface font-medium">Drop Audio or Click to Upload</p></div></div></div>
+<!-- Media Inputs Grid -->
+<div class="grid grid-cols-2 gap-stack-md mb-stack-lg">
+<!-- Image Upload -->
+<div class="border-2 border-dashed border-outline-variant rounded-lg p-stack-md flex flex-col items-center justify-center text-center hover:bg-surface-container-low transition-colors cursor-pointer bg-surface">
+<div class="flex items-center gap-1 text-outline mb-4 w-full justify-start border-b border-surface-variant pb-2">
+<span class="material-symbols-outlined text-[16px]">image</span>
+<span class="font-label-bold text-[10px]">Skin Image</span>
+</div>
+<span class="material-symbols-outlined text-[32px] text-primary mb-2">upload</span>
+<p class="font-body-md text-on-surface font-medium">Drop Image Here</p>
+<p class="font-body-sm text-on-surface-variant mb-1">- or -</p>
+<p class="font-body-sm text-primary">Click to Upload</p>
+</div>
+<!-- Video Upload -->
+<div class="border-2 border-dashed border-outline-variant rounded-lg p-stack-md flex flex-col items-center justify-center text-center hover:bg-surface-container-low transition-colors cursor-pointer bg-surface">
+<div class="flex items-center gap-1 text-outline mb-4 w-full justify-start border-b border-surface-variant pb-2">
+<span class="material-symbols-outlined text-[16px]">videocam</span>
+<span class="font-label-bold text-[10px]">Skin Video</span>
+</div>
+<span class="material-symbols-outlined text-[32px] text-primary mb-2">upload</span>
+<p class="font-body-md text-on-surface font-medium">Drop Video Here</p>
+<p class="font-body-sm text-on-surface-variant mb-1">- or -</p>
+<p class="font-body-sm text-primary">Click to Upload</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-body-md font-bold py-4 rounded-lg hover:bg-primary-container transition-colors shadow-sm active:scale-[0.98]">
+                            Analyze Concern
+                        </button>
+<div class="mt-4 bg-primary-fixed text-on-primary-fixed-variant p-3 rounded-lg flex items-start gap-2 font-body-sm text-[13px]">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">info</span>
+<p class="">For better assessment, include a short video showing the affected area from multiple angles and under good lighting.</p>
+</div>
+</div>
+</div>
+<!-- Right Panel: Clinical Insights -->
+<div class="lg:col-span-7 flex flex-col gap-stack-md">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+<h3 class="font-headline-lg text-[20px] font-bold text-on-surface">Doctor Response</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] border border-surface-variant p-card-padding flex-1 flex flex-col">
+<!-- Empty State Header -->
+<div class="text-center py-stack-lg border-b border-surface-variant mb-stack-md">
+<div class="w-16 h-16 bg-surface-container-low rounded-full flex items-center justify-center mx-auto mb-4 border border-surface-variant">
+<span class="material-symbols-outlined text-[32px] text-outline">assignment_turned_in</span>
+</div>
+<h4 class="font-headline-lg text-[20px] font-bold text-on-surface mb-2">Ready for Analysis</h4>
+<p class="font-body-sm text-on-surface-variant">Your consultation summary, transcript, and guidance will appear below after analysis.</p>
+</div>
+<!-- Placeholders -->
+<div class="flex-1 flex flex-col gap-stack-md">
+<div>
+<h5 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider mb-2">Your Speech Transcript</h5>
+<div class="bg-surface-container-low rounded-lg h-24 border border-surface-variant opacity-50"></div>
+</div>
+<div class="flex-1 flex flex-col">
+<h5 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider mb-2">Doctor's Guidance</h5>
+<div class="bg-[#e0f7fa] rounded-lg flex-1 min-h-[200px] border border-[#b2ebf2] opacity-50 relative overflow-hidden">
+<!-- Soft cyan tint for AI section placeholder -->
+</div>
+</div>
+<div>
+<div class="flex items-center gap-2 text-outline mb-2">
+<span class="material-symbols-outlined text-[16px]">graphic_eq</span>
+<span class="font-label-bold text-[10px] uppercase">Doctor Voice Response</span>
+</div>
+<div class="bg-surface-container-low rounded-lg h-16 border border-surface-variant flex items-center justify-center opacity-50">
+<span class="material-symbols-outlined text-outline">music_note</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="mt-stack-lg py-4 text-center">
+<p class="text-[12px] text-on-surface-variant opacity-70 font-body-sm">© 2026 Rupali Chauksey. All Rights Reserved. Clinical Intelligence System v1.0</p>
+</footer></main>
+</div>
+<script>
+    document.getElementById('toggle-audio-upload').addEventListener('click', function() {
+        const uploadZone = document.getElementById('audio-upload-zone');
+        if (uploadZone.classList.contains('hidden')) {
+            uploadZone.classList.remove('hidden');
+            this.innerHTML = '<span class="material-symbols-outlined text-[16px]">close</span> Cancel Upload';
+        } else {
+            uploadZone.classList.add('hidden');
+            this.innerHTML = '<span class="material-symbols-outlined text-[16px]">upload</span> Upload Audio';
+        }
+    });
+</script>
+</body></html>
+
+
