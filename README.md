@@ -40,7 +40,7 @@ https://github.com/user-attachments/assets/fb687f78-9445-46a1-954d-ef49ef45d373
 ---
 
 
-## Product Overview
+## Project Overview
 
 Skin consultations often contain multiple sources of information: what the patient says, what is visible in a still image, and what changes across a short video.
 
