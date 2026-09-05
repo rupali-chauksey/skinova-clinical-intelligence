@@ -1,6 +1,6 @@
 # Step1: Record audio from microphone
 
-# dependencies: ffmpeg, portaudio, pyaudio (commands available in description)
+# dependencies: ffmpeg, portaudio, pyaudio
 import logging
 import speech_recognition as sr
 from pydub import AudioSegment
