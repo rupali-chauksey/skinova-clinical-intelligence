@@ -25,7 +25,14 @@ The system uses **speech-to-text, a Vision-Language Model (VLM), deterministic P
 
 ## 🎥 Demo
 
-[▶️ Watch Skinova Demo](demo/skinova_demo.mp4)
+<video
+  src="PASTE_GITHUB_VIDEO_URL_HERE"
+  controls
+  muted
+  loop
+  playsinline
+  width="100%">
+</video>
 
 ---
 
