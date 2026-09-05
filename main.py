@@ -982,6 +982,20 @@ def _build_safety_banner(confidence, patient_response):
 
 
 def process_inputs(audio_filepath, image_filepath, video_filepath):
+    # Voice is mandatory. Show a non-blocking popup/toast instead of an
+    # inline Gradio Error state in every output component.
+    if not audio_filepath:
+        gr.Warning(
+            "Patient voice is required. Please record or upload your voice description before analysis."
+        )
+        return (
+            "",
+            "",
+            "",
+            "",
+            None,
+        )
+
     patient_text = transcribe_patient_voice(audio_filepath)
 
     # ------------------------------------------------------------
@@ -1640,7 +1654,7 @@ with gr.Blocks(title=APP_TITLE, css=STITCH_CSS) as iface:
                     audio_input = gr.Audio(
                         sources=["microphone", "upload"],
                         type="filepath",
-                        label="Patient Voice",
+                        label="Patient Voice (Required)",
                         elem_id="voice_input",
                     )
 
