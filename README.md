@@ -24,8 +24,12 @@ The system uses **speech-to-text, a Vision-Language Model (VLM), deterministic P
 
 
 
+## 🎥 Demo
 
-Uploading skinova-demo.mp4…
+![](https://github.com/user-attachments/assets/99f64f2a-ff7d-4b65-a337-21ac88277070)
+
+
+![](https://github.com/user-attachments/assets/99f64f2a-ff7d-4b65-a337-21ac88277070)
 
 
 ## 🎥 Demo
